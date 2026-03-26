@@ -132,7 +132,7 @@ def bot_off(message):
 def handle_like(message):
     chat_id = message.chat.id
     if not BOT_ACTIVE:
-    bot.reply_to(message, "🚫 ʙᴏᴛ ɪs ᴄᴜʀʀᴇɴᴛʟʏ ᴏғғ ")
+        bot.reply_to(message, "🚫 ʙᴏᴛ ɪs ᴄᴜʀʀᴇɴᴛʟʏ ᴏғғ")
         return
     # Group Restriction
     if chat_id != ALLOWED_GROUP_ID:
