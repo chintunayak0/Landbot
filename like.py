@@ -28,6 +28,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 ALLOWED_GROUP_ID =-1003789754832
 VIP_USERS = {8550650269}
 BOT_ACTIVE = True
+ADMIN_ID = 8550650269
 API_URL = os.getenv("API_URL")
 # Tracker for daily limits
 like_request_tracker = {}
