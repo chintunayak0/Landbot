@@ -38,7 +38,7 @@ bot = telebot.TeleBot(BOT_TOKEN)
 def call_api(region, uid):
     url = f"{API_URL}?uid={uid}&server_name={region}"
     try:
-        response = requests.get(url, timeout=15) # Increased timeout
+        response = requests.get(url, timeout=30) # Increased timeout
         if response.status_code == 200:
             return response.json()
         return "API_ERROR"
