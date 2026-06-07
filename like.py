@@ -36,7 +36,7 @@ like_request_tracker = {}
 bot = telebot.TeleBot(BOT_TOKEN)
 
 def call_api(region, uid):
-    url = f"{API_URL}?uid={uid}&server={region}"
+    url = f"{API_URL}?uid={uid}&server_name={region}"
     try:
         response = requests.get(url, timeout=15) # Increased timeout
         if response.status_code == 200:
@@ -83,11 +83,11 @@ def process_like(message, region, uid):
                 like_request_tracker[user_id] = True  
 
             caption = (f"✅ **Like Added Successfully!**\n\n"
-                       f"👤 **Nickname:** `{response.get('player', 'N/A')}`\n"
+                       f"👤 **Nickname:** `{response.get('PlayerNickname', 'N/A')}`\n"
                        f"🆔 **UID:** `{uid}`\n"
-                       f"📈 **Before:** `{response.get('likes_before', '0')}`\n"
-                       f"📈 **After:** `{response.get('likes_after', '0')}`\n"
-                       f"➕ **Added:** `{response.get('likes_added', '0')}`\n\n"
+                       f"📈 **Before:** `{response.get('LikesbeforeCommand', '0')}`\n"
+                       f"📈 **After:** `{response.get('LikesafterCommand', '0')}`\n"
+                       f"➕ **Added:** `{response.get('LikesGivenByAPI', '0')}`\n\n"
                        "🗿 **JOIN CHANNEL:** @nayakcheatss")
 
             # Try to send with User's Profile Photo
